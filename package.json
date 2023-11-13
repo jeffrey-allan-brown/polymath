@@ -1,0 +1,26 @@
+{
+  "name": "polymath",
+  "version": "0.0.1",
+  "description": "polymath is the interface for tracking my personal learning journey, incorporating elements of interactivity, gamification, and achievement tracking.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tailwindcss -i ./src/assets/css/main.css -o ./dist/assets/css/main.css --watch" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeffrey-allan-brown/polymath.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeffrey-allan-brown/polymath/issues"
+  },
+  "homepage": "https://github.com/jeffrey-allan-brown/polymath#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
+  },
+  "dependencies": {
+    "nodejs": "^0.0.0"
+  }
+}
