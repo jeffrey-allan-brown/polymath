@@ -4,8 +4,9 @@
   "description": "polymath is the interface for tracking my personal learning journey, incorporating elements of interactivity, gamification, and achievement tracking.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx tailwindcss -i ./src/assets/css/main.css -o ./dist/assets/css/main.css --watch" 
+    "start": "http-server ./dist/ --cors -o -c-1 --proxy",
+    "build": "webpack --config ./config/webpack.config.js --mode production",
+    "dev": "webpack serve --config ./config/webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -17,10 +18,28 @@
     "url": "https://github.com/jeffrey-allan-brown/polymath/issues"
   },
   "homepage": "https://github.com/jeffrey-allan-brown/polymath#readme",
-  "devDependencies": {
-    "tailwindcss": "^3.3.5"
-  },
   "dependencies": {
-    "nodejs": "^0.0.0"
+    "svelte": "^4.2.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.23.3",
+    "babel-loader": "^9.1.3",
+    "css-loader": "^6.8.1",
+    "dotenv-webpack": "^8.0.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.3",
+    "postcss": "^8.4.31",
+    "postcss-loader": "^7.3.3",
+    "postcss-preset-env": "^9.3.0",
+    "style-loader": "^3.3.3",
+    "svelte-loader": "^3.1.9",
+    "tailwindcss": "^3.3.5",
+    "webpack": "^5.89.0",
+    "webpack-bundle-analyzer": "^4.10.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1",
+    "webpack-merge": "^5.10.0"
   }
 }
