@@ -2,7 +2,6 @@
   import logo from '$lib/images/logo.png';
   import { page } from '$app/stores';
 
-  console.log($page.route.id)
   $: activePageStyles = 'bg-gray-100';
   $: inactivePageStyles = '';
 </script>

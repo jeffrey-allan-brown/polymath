@@ -1,4 +1,5 @@
 <script>
+	import { activeToken } from "../../lib/stores/activeToken";
 
 </script>
 
@@ -14,7 +15,8 @@
 	<div class="mx-auto px-4 sm:px-6 md:px-8">
 		<div class="py-4">
 			<div class="h-96 rounded-md border border-dashed border-gray-900">
-				
+				<slot />
+				Token
 			</div>
 		</div>
 	</div>
