@@ -7,7 +7,6 @@
 	let htmlTokens;
 
 	const getTokens = async() => {
-		let promiseArray = [];
 		// let tokenFetch = await fetch('./assets/data/tokens.json');
 		// let tokens = await tokenFetch.json();
 		return staticTokens;
@@ -17,8 +16,6 @@
 		return getTokens().then((tokens) => {
 			window.tokens = tokens;
 			htmlTokens = tokens.slice(0,1);
-
-			console.log("tokens: ", htmlTokens)
 
 			isLoading = false;
 		});
@@ -40,7 +37,7 @@
 	</div>
 	<div class="mx-auto px-4 sm:px-6 md:px-8">
 		<div class="py-4">
-			<div class="h-96 rounded-md border border-dashed border-gray-900">
+			<div class="h-96">
 				{#if isLoading}
 				loading...
 				{:else}
