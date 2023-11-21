@@ -1,42 +1,83 @@
 {
-  "pathway": {
-    "nodes": [
+  "frontEndWebDevelopment": {
+		"nodes": [
       {
-        "id": "12724",
-        "nodeTypeId": "Arrow",
-        "zOrder": "9",
-        "w": "142",
-        "h": "44",
-        "measuredW": "150",
-        "measuredH": "100",
-        "x": "648",
-        "y": "3011",
-        "properties": {
-          "color": "2848996",
-          "curvature": "0",
-          "direction": "bottom",
-          "leftArrow": "false",
-          "rightArrow": "false",
-          "stroke": "dotted",
-          "p0": {
-            "x": -0.2570801773204039,
-            "y": 43.273907378054446
-          },
-          "p1": {
-            "x": 0.4540886815248379,
-            "y": -0.08069525981073665
-          },
-          "p2": {
-            "x": 142,
-            "y": 0
-          }
-        }
-      }
-    ],
-    "meta": {
-      "attributes": {
-        "name": "Front-End Web Development"
-      }
-    }
-  }
+				"id": "0000",
+				"nodeTitle": "web-development-overview",
+				"nodeTypeId": "rect",
+				"width": "200",
+				"height": "80",
+				"xpos": "5",
+				"ypos": "50",
+				"properties": {
+					"bgColor": "rgb(255,255,255)",
+					"bdColor": "rgb(0,0,0)",
+					"bdWidth": "2",
+					"radius": "1",
+					"opacity": "1"
+				},
+				"attributes": {
+					
+				},
+				"label": {
+					"text": "Overview"
+				}
+			},
+			{
+				"id": "0001",
+				"nodeTitle": "the-internet",
+				"nodeTypeId": "rect",
+				"width": "200",
+				"height": "80",
+				"xpos": "300",
+				"ypos": "50",
+				"properties": {
+					"bgColor": "rgb(255,255,255)",
+					"bdColor": "rgb(0,0,0)",
+					"bdWidth": "2",
+					"radius": "1",
+					"opacity": "1"
+				},
+				"attributes": {
+					
+				},
+				"label": {
+					"text": "Internet"
+				}
+			},
+      {
+				"id": "0002",
+				"nodeTitle": "dns",
+				"nodeTypeId": "rect",
+				"width": "200",
+				"height": "80",
+				"xpos": "600",
+				"ypos": "50",
+				"properties": {
+					"bgColor": "rgb(255,255,255)",
+					"bdColor": "rgb(0,0,0)",
+					"bdWidth": "2",
+					"radius": "1",
+					"opacity": "1"
+				},
+				"attributes": {
+					
+				},
+				"label": {
+					"text": "DNS"
+				}
+			}
+		],
+		"meta": {
+			"attributes": {
+				"name": "Front-End Web Development"
+			},
+			"configuration": {
+				"minw": "0",
+				"minh": "0",
+				"width": "1280", 
+				"height": "1000"
+			}
+		}
+	}
 }

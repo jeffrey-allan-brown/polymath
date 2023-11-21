@@ -1,43 +1,7 @@
 <script>
 	import { onMount } from "svelte";
 	import { renderPolymathPathway } from "../lib/helpers/pathwayRenderer";
-	const pathwayData = {
-		nodes: [
-			{
-				id: "1",
-				nodeTitle: "the-internet",
-				nodeTypeId: "rect",
-				width: "200",
-				height: "80",
-				xpos: "10",
-				ypos: "35",
-				properties: {
-					bgColor: "rgb(255,255,255)",
-					bdColor: "rgb(0,0,0)",
-					bdWidth: "2",
-					radius: "1",
-					opacity: "1"
-				},
-				attributes: {
-					
-				},
-				label: {
-					text: "Testing"
-				}
-			}
-		],
-		meta: {
-			attributes: {
-				name: "Front-End Web Development"
-			},
-			configuration: {
-				minw: "0",
-				minh: "0",
-				width: "1280", 
-				height: "1000"
-			}
-		}
-	}
+	import pathwayData from '../assets/data/pathways.json';
 
 	onMount(() => {
 		const pathwayRoot = document.getElementById("polymath-pathway-wrapper");

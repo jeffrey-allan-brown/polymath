@@ -32,7 +32,6 @@ function createRectangle(node, parent) {
   group.setAttribute("data-group-id", node.nodeTitle );
 
   // create rectangle vector //
-
   let rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
   rect.setAttribute("x", node.xpos);
   rect.setAttribute("y", node.ypos);
@@ -44,33 +43,24 @@ function createRectangle(node, parent) {
   rect.setAttribute("stroke", node.properties.bdColor);
   rect.setAttribute("stroke-width", node.properties.bdWidth);
 
+  // add optional text //
+  // <text x="744" y="483.5859999656677" fill="rgb(0,0,0)" font-style="normal" font-weight="normal" font-size="17px"><tspan>Internet</tspan></text>
+
   parent.appendChild(group);
   group.appendChild(rect);
-}
 
-function renderLinkIcon(node) {
-  const iconSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-  const iconPath = document.createElementNS(
-    'http://www.w3.org/2000/svg',
-    'path'
-  );
-
-  iconSvg.setAttribute('fill', 'none');
-  iconSvg.setAttribute('viewBox', '0 0 24 24');
-  iconSvg.setAttribute('stroke', 'black');
-  iconSvg.classList.add('post-icon');
-
-  iconPath.setAttribute(
-    'd',
-    'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1'
-  );
-  iconPath.setAttribute('stroke-linecap', 'round');
-  iconPath.setAttribute('stroke-linejoin', 'round');
-  iconPath.setAttribute('stroke-width', '2');
-
-  iconSvg.appendChild(iconPath);
-
-  return node.appendChild(iconSvg);
+  if (node.label) {
+    let text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    text.setAttribute("x", node.xpos);
+    text.setAttribute("y", 95);
+    text.setAttribute("fill", node.properties.bdColor);
+    text.setAttribute("font-style", "normal");
+    text.setAttribute("font-weight", "normal");
+    text.setAttribute("font-size", "15px");
+    let content = document.createTextNode(node.label.text)
+    text.appendChild(content);
+    group.appendChild(text)
+  }
 }
 
 
@@ -79,8 +69,8 @@ export async function renderPolymathPathway(data, pathwayRoot) {
   console.log("...rendering pathway...")
 
   // // define key variables //
-  const nodes = data.nodes;
-  const configuration = data.meta.configuration;
+  const nodes = data.frontEndWebDevelopment.nodes;
+  const configuration = data.frontEndWebDevelopment.meta.configuration;
 
   // // create the primary pathway frame //
   const pathwayFrame = await createVectorElement("svg", { 
@@ -97,3 +87,5 @@ export async function renderPolymathPathway(data, pathwayRoot) {
     }
   }
 }
+
+
