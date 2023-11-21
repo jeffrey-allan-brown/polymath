@@ -1,0 +1,42 @@
+{
+  "pathway": {
+    "nodes": [
+      {
+        "id": "12724",
+        "nodeTypeId": "Arrow",
+        "zOrder": "9",
+        "w": "142",
+        "h": "44",
+        "measuredW": "150",
+        "measuredH": "100",
+        "x": "648",
+        "y": "3011",
+        "properties": {
+          "color": "2848996",
+          "curvature": "0",
+          "direction": "bottom",
+          "leftArrow": "false",
+          "rightArrow": "false",
+          "stroke": "dotted",
+          "p0": {
+            "x": -0.2570801773204039,
+            "y": 43.273907378054446
+          },
+          "p1": {
+            "x": 0.4540886815248379,
+            "y": -0.08069525981073665
+          },
+          "p2": {
+            "x": 142,
+            "y": 0
+          }
+        }
+      }
+    ],
+    "meta": {
+      "attributes": {
+        "name": "Front-End Web Development"
+      }
+    }
+  }
+}

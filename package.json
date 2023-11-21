@@ -47,5 +47,8 @@
     "webpack-dev-server": "^4.15.1",
     "webpack-merge": "^5.10.0"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "roadmap-renderer": "^1.0.6"
+  }
 }
