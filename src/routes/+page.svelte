@@ -3,6 +3,8 @@
 	import { renderPolymathPathway } from "../lib/helpers/pathwayRenderer";
 	import pathwayData from '../assets/data/pathways.json';
 
+	$: nodeStyles = "";
+
 	onMount(() => {
 		const pathwayRoot = document.getElementById("polymath-pathway-wrapper");
 		console.log(pathwayData, pathwayRoot)
@@ -50,10 +52,12 @@
 						</div> 
 					</div>
 					<div id="polymath-pathway-wrapper" style="" class="--aspect-ratio" data-resource-type="roadmap" data-resource-id="frontend">
-
 					</div>
 				</div>
 			</div>
 		</div>
 	</main>
 </div>
+
+<style>
+</style>

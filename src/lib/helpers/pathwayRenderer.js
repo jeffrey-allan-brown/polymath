@@ -1,7 +1,4 @@
 // define constants //
-/* <rect x="556.35" y="1440.35" width="136.3" height="45.3" rx="2" fill="rgb(255,229,153)" fill-opacity="1" stroke="rgb(0,0,0)" stroke-width="2.7"></rect>
-<text x="594" y="1468.6370000839233" fill="rgb(0,0,0)" font-style="normal" font-weight="normal" font-size="17px"><tspan>Tailwind</tspan></text> */
-
 // ... //
 
 // // process colors //
@@ -14,7 +11,6 @@
 
 // // create page and document elements //
 async function createVectorElement(element, attributes = {}, parent) {
-  console.log("...creating element...", element, attributes, parent)
 	let node = document.createElementNS("http://www.w3.org/2000/svg", element); 
 	for (let attribute in attributes) {
 		attributes.hasOwnProperty(attribute) && node.setAttribute(attribute, attributes[attribute])
@@ -22,14 +18,25 @@ async function createVectorElement(element, attributes = {}, parent) {
 	return parent && parent.appendChild(node), node;
 }
 
+// create shape: line //
+function createLine(node, parent) {
+  // <path d="M284 477.5703621905065Q467.7590341195586 477.62595627332604 698 477.5703621905065" fill="none" stroke="rgb(43,120,228)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="undefined"></path>
+  let path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute("d", node.path);
+  path.setAttribute("fill", "none");
+  path.setAttribute("stroke", "rgb(0,0,0)");
+  path.setAttribute("stroke-width", node.bdWidth)
+  parent.appendChild(path);
+  console.log(parent)
+}
+
 // create shape: rectangle //
 function createRectangle(node, parent) {
-  console.log("...creating rectangle...");
 
   // create group container //
   let group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-  group.setAttribute("class", "clickable-group");
   group.setAttribute("data-group-id", node.nodeTitle );
+  group.classList.add('pathwayNode', 'clickableGrouping')
 
   // create rectangle vector //
   let rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
@@ -38,25 +45,29 @@ function createRectangle(node, parent) {
   rect.setAttribute("width", node.width);
   rect.setAttribute("height", node.height);
   rect.setAttribute("rx", node.properties.radius);
-  rect.setAttribute("fill", node.properties.bgColor);
+  // rect.setAttribute("fill", node.properties.bgColor);
   rect.setAttribute("fill-opacity", node.properties.opacity);
   rect.setAttribute("stroke", node.properties.bdColor);
   rect.setAttribute("stroke-width", node.properties.bdWidth);
-
-  // add optional text //
-  // <text x="744" y="483.5859999656677" fill="rgb(0,0,0)" font-style="normal" font-weight="normal" font-size="17px"><tspan>Internet</tspan></text>
+  rect.classList.add('pathwayNode')
 
   parent.appendChild(group);
   group.appendChild(rect);
 
+  // add optional text //
   if (node.label) {
     let text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-    text.setAttribute("x", node.xpos);
-    text.setAttribute("y", 95);
+    let textPosX = Number(node.xpos) + Number(node.width / 2);
+    let textPosY = Number(node.ypos) + Number(node.height / 2);
+
+    text.setAttribute("x", textPosX);
+    text.setAttribute("y", textPosY);
     text.setAttribute("fill", node.properties.bdColor);
     text.setAttribute("font-style", "normal");
     text.setAttribute("font-weight", "normal");
-    text.setAttribute("font-size", "15px");
+    text.setAttribute("font-size", node.label.fontSize);
+    text.setAttribute("dominant-baseline", "middle");
+    text.setAttribute("text-anchor", "middle");
     let content = document.createTextNode(node.label.text)
     text.appendChild(content);
     group.appendChild(text)
@@ -66,26 +77,33 @@ function createRectangle(node, parent) {
 
 // main function //
 export async function renderPolymathPathway(data, pathwayRoot) {
-  console.log("...rendering pathway...")
 
   // // define key variables //
   const nodes = data.frontEndWebDevelopment.nodes;
   const configuration = data.frontEndWebDevelopment.meta.configuration;
+  const containerWidth = pathwayRoot.offsetWidth;
+
+  const config = {
+    minw: 0,
+    minh: 0,
+    width: containerWidth,
+    height: 300
+  }
 
   // // create the primary pathway frame //
   const pathwayFrame = await createVectorElement("svg", { 
     "xmlns": "http://www.w3.org/2000/svg",
     "xmlns:xlink": "http://www.w3.org/1999/xlink",
-    "viewBox": `${configuration.minw}, ${configuration.minh}, ${configuration.width}, ${configuration.height}` 
+    "viewBox": `${config.minw}, ${config.minh}, ${config.width}, ${config.height}` 
   }, pathwayRoot);
 
   // loop through nodes and render elements //
   for (let node in nodes) {
     console.log("...generating node: ", nodes[node]);
     if (nodes[node].nodeTypeId == 'rect') {
-      createRectangle(nodes[node], pathwayFrame)
+      createRectangle(nodes[node], pathwayFrame);
+    } else if (nodes[node].nodeTypeId == 'path') {
+      createLine(nodes[node], pathwayFrame);
     }
   }
 }
-
-

@@ -1,3 +1,44 @@
+/* ================ */
+/* === contents === */
+/* ================ */
+
+/*
+01 - tailwindcss
+02 - base
+03 - pathway nodes
+*/
+
+
+/* ======================== */
+/* === 01 - tailwindcss === */
+/* ======================== */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+
+
+/* ================= */
+/* === 02 - base === */
+/* ================= */
+
+
+
+
+
+/* ========================== */
+/* === 03 - pathway nodes === */
+/* ========================== */
+svg .clickableGrouping {
+  cursor: pointer;
+}
+
+svg .clickableGrouping {
+  fill: #ffffff;
+}
+
+svg .clickableGrouping:hover {
+  fill: #f6f6f6;
+}
