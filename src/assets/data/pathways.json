@@ -1,0 +1,66 @@
+{
+  "frontEndWebDevelopment": {
+		"nodes": [
+      {
+				"id": "0000",
+				"nodeTitle": "web-development-overview",
+				"nodeTypeId": "rect",
+				"width": "200",
+				"height": "40",
+				"xpos": "5",
+				"ypos": "20",
+				"properties": {
+					"bgColor": "rgb(255,255,255)",
+					"bdColor": "rgb(0,0,0)",
+					"bdWidth": "2",
+					"radius": "3",
+					"opacity": "1"
+				},
+				"attributes": {
+					
+				},
+				"label": {
+					"text": "Overview of Development",
+          "fontSize": "13px",
+          "textColor": "rgb(255,255,255)"
+				}
+			},
+      {
+        "id": "0002",
+				"nodeTitle": "",
+				"nodeTypeId": "path",
+        "path": "M 205 40 255 40",
+        "bdWidth": "2"
+      },
+			{
+				"id": "0002",
+				"nodeTitle": "the-internet",
+				"nodeTypeId": "rect",
+				"width": "150",
+				"height": "40",
+				"xpos": "255",
+				"ypos": "20",
+				"properties": {
+					"bgColor": "rgb(255,255,255)",
+					"bdColor": "rgb(0,0,0)",
+					"bdWidth": "1.5",
+					"radius": "2",
+					"opacity": "1"
+				},
+				"attributes": {
+					
+				},
+				"label": {
+					"text": "The Internet",
+          "fontSize": "13px"
+          
+				}
+			}
+		],
+		"meta": {
+			"attributes": {
+				"name": "Front-End Web Development"
+			}
+		}
+	}
+}
