@@ -129,6 +129,8 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+# miscellaneous
 archive
 test.js
 cache
+.svelte-kit
