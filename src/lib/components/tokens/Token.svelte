@@ -15,7 +15,6 @@
   export let subcategory = "";
 </script>
 
-
 <div class="max-w-sm w-full sm:w-1/2 lg:w-1/3">
   <div class="bg-white shadow-xl rounded-lg overflow-hidden">
     <div class="bg-cover h-80 p-4" style="background-image: url({images.small})">

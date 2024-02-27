@@ -87,7 +87,7 @@ export async function renderPolymathPathway(data, pathwayRoot) {
     minw: 0,
     minh: 0,
     width: containerWidth,
-    height: 300
+    height: 500
   }
 
   // // create the primary pathway frame //

@@ -1,17 +1,7 @@
 <script>
 	import { onMount } from "svelte";
-	import { renderPolymathPathway } from "../lib/helpers/pathwayRenderer";
-	import pathwayData from '../assets/data/pathways.json';
-
-	$: nodeStyles = "";
-
-	onMount(() => {
-		const pathwayRoot = document.getElementById("polymath-pathway-wrapper");
-		console.log(pathwayData, pathwayRoot)
-		renderPolymathPathway(pathwayData, pathwayRoot);
-	});
-</script>
-
+	</script>
+	
 <svelte:head>
 	<title>dashboard | polymath</title>
 	<meta name="description" content="polymath dashboard" />
@@ -20,7 +10,7 @@
 <div class="py-10">
 	<header>
 		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-			<h1 class="text-3xl font-bold leading-tight tracking-tight text-gray-900">General Dashboard</h1>
+			<h1 class="text-3xl font-bold leading-tight tracking-tight text-gray-900">Your Active Pathways</h1>
 		</div>
 	</header>
 	<main>
@@ -51,7 +41,7 @@
 							</div>
 						</div> 
 					</div>
-					<div id="polymath-pathway-wrapper" style="" class="--aspect-ratio" data-resource-type="roadmap" data-resource-id="frontend">
+					<div id="polymath-pathway-wrapper" style="" class="--aspect-ratio" data-resource-type="roadmap" data-resource-id="[roadmapId]">
 					</div>
 				</div>
 			</div>
