@@ -1,5 +1,12 @@
 {
   "frontEndWebDevelopment": {
+		"metadata": {
+			"attributes": {
+				"name": "Front-End Web Development",
+				"description": "Description of Front-end Web Development",
+				"difficulty": "Beginner"
+			}
+		},
 		"nodes": [
       {
 				"id": "0000",
@@ -80,12 +87,7 @@
           
 				}
 			}
-		],
-		"meta": {
-			"attributes": {
-				"name": "Front-End Web Development"
-			}
-		}
+		]
 	},
 	"backEndWebDevelopment": {}
 }
