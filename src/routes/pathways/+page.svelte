@@ -1,11 +1,6 @@
 <div class="py-10">
-	<header>
-		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-			<h1 class="text-3xl font-bold leading-tight tracking-tight text-gray-900">Available Pathways</h1>
-		</div>
-	</header>
 	<main>
-		<div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+		<div class="mx-auto sm:px-6 lg:px-8">
 			<div class="px-4 py-8 sm:px-0">
 				<div class="grid grid-cols-1 gap-1 sm:grid-cols-2 sm:gap-3">
           <a href="/pathway/frontend" class="relative flex h-full flex-col rounded-md border border-gray-200 bg-white p-2.5 hover:border-gray-400 sm:rounded-lg sm:p-5"> 

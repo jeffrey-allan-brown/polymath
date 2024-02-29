@@ -1,8 +1,7 @@
 <script>
 	import { onMount } from "svelte";
-	import Slideout from '../../../lib/components/_core/Slideout.svelte';
 	import { renderPolymathPathway } from "../../../lib/helpers/pathwayRenderer";
-	import pathwayData from '../../../assets/data/pathways.json';
+	import pathwayData from '../../../assets/data/pathway.json';
 
 	$: nodeStyles = "";
 
@@ -12,11 +11,6 @@
 		renderPolymathPathway(pathwayData, pathwayRoot);
 	});
 
-	import { fly, fade } from 'svelte/transition'
-	let showSidePanel, width
-	function toggleSidePanel() {
-			showSidePanel = !showSidePanel
-	}
 </script>
 
 <div class="py-10">
@@ -26,13 +20,10 @@
 		</div>
 	</header>
 	<div>
-    <button class="p-3" on:click={toggleSidePanel}>
-        Show side panel
+    <button class="p-3">
+      Show side panel
     </button>
 </div>
-{#if showSidePanel}
-	<Slideout on:click={toggleSidePanel}/>
-	{/if}
 	<main>
 		<div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
 			<div class="px-4 py-8 sm:px-0">
