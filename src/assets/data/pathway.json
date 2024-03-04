@@ -1,5 +1,12 @@
 {
   "frontEndWebDevelopment": {
+		"metadata": {
+			"attributes": {
+				"name": "Front-End Web Development",
+				"description": "Description of Front-end Web Development",
+				"difficulty": "Beginner"
+			}
+		},
 		"nodes": [
       {
 				"id": "0000",
@@ -33,7 +40,7 @@
         "bdWidth": "2"
       },
 			{
-				"id": "0002",
+				"id": "0003",
 				"nodeTitle": "the-internet",
 				"nodeTypeId": "rect",
 				"width": "150",
@@ -55,12 +62,32 @@
           "fontSize": "13px"
           
 				}
+			},
+			{
+				"id": "0004",
+				"nodeTitle": "html",
+				"nodeTypeId": "rect",
+				"width": "150",
+				"height": "40",
+				"xpos": "455",
+				"ypos": "20",
+				"properties": {
+					"bgColor": "rgb(255,255,255)",
+					"bdColor": "rgb(0,0,0)",
+					"bdWidth": "1.5",
+					"radius": "2",
+					"opacity": "1"
+				},
+				"attributes": {
+					
+				},
+				"label": {
+					"text": "HTML",
+          "fontSize": "13px"
+          
+				}
 			}
-		],
-		"meta": {
-			"attributes": {
-				"name": "Front-End Web Development"
-			}
-		}
-	}
+		]
+	},
+	"backEndWebDevelopment": {}
 }
